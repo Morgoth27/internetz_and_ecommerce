@@ -6,25 +6,31 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    title: {
-      type: DataTypes.STRING
+        //I understand that sequelize auto assigns an id and autoincrements, but because it is specifically asked for in the readme, I have added it
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    author: {
-      type: DataTypes.STRING
+    product_id: {
+      category_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'product',
+          key: 'id',
+        },
+      },
     },
-    isbn: {
-      type: DataTypes.STRING
+    tag_id: {
+      category_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'tag',
+          key: 'id',
+        },
+      },
     },
-    pages: {
-      type: DataTypes.INTEGER
-    },
-    edition: {
-      type: DataTypes.INTEGER
-    },
-    // Will become `is_paperback` in table due to `underscored` flag
-    isPaperback: {
-      type: DataTypes.BOOLEAN
-    }
   },
   {
     sequelize,

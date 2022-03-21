@@ -9,8 +9,12 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
-    title: {
-      type: DataTypes.STRING
+    //I understand that sequelize auto assigns an id and autoincrements, but because it is specifically asked for in the readme, I have added it
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     product_name: {
       type: DataTypes.STRING,
@@ -22,7 +26,7 @@ Product.init(
       validate: {
         isDecimal:{
           arg: true,
-          msg: "Price must be a number!"
+          msg: "Price format required!"
           },
       }, 
     },
