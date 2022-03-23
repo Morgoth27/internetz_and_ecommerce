@@ -72,6 +72,12 @@ Please install all needed dependencies with npm install.
 N/A    
 
 
+## Video of application in use:
+-------------------------------
+
+[![Click to watch video](./photos/screengrab_thumb.png)](https://drive.google.com/file/d/1ImAiu7K2VxkpaQUhcaErgMaYVHSPb4hN/)
+
+
 ## About the Author
 ------------------
 
